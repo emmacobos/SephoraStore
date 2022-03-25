@@ -4,7 +4,7 @@ import './NavBarClass';
 import CartWidget from '../CartWidget/CartWidget';
 
 function NavBar(props){
-    console.log(props)
+    // console.log(props)
     return(
         <header className="main-header">
             <div className='container-logo'>

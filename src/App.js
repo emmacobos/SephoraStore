@@ -30,13 +30,6 @@ function App() {
       <ItemListContainer>
         Productos en Oferta
       </ItemListContainer>
-      <button onClick={handleOpen}></button>
-      <ModalCustom handleClose={handleClose} open={open}>
-        <p>FORMULARIO CONTACTO</p>
-      </ModalCustom>
-      <ModalCustom handleClose={handleClose} open={open}>
-        <Card />
-      </ModalCustom>
     </div>
   );
 }
