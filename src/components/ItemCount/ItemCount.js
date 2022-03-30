@@ -15,11 +15,11 @@ const ItemCount = ({stock}) => {
         }
     }
     return (
-        <>
+        <div className="stock">
         <button onClick={sub}>-</button>
-        <p>{count}</p>
+        <div>{count}</div>
         <button onClick={onAdd}>+</button>
-        </>
+        </div>
     )
 }
 

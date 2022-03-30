@@ -6,6 +6,7 @@ import Card from './components/Card/Card'
 import CardClass from './components/Card/CardClass'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
 import ModalCustom from './components/Modal/Modal';
+import ItemList from "./components/ItemListContainer/ItemList"
 
 function App() {
   const [open, setOpen] = React.useState(false);
@@ -22,14 +23,7 @@ function App() {
 
     <div className="App">
       <NavBar />
-      <ItemListContainer>
-        <p>Productos Realacionados</p>
-        <span>Subtitulo</span>
-
-      </ItemListContainer>
-      <ItemListContainer>
-        Productos en Oferta
-      </ItemListContainer>
+        <ItemList />
     </div>
   );
 }
