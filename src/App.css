@@ -47,3 +47,13 @@ ul.navbar li{
   margin-top: 20px;
   margin-bottom: 20px;
 }
+.container-logo img {
+  width: 100px;
+}
+.carrito{
+  display: flex;
+  align-items: center;
+}
+.carrito img{
+  margin-right: 10px;
+}

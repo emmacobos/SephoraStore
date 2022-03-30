@@ -8,7 +8,7 @@ function NavBar(props){
     return(
         <header className="main-header">
             <div className='container-logo'>
-                <img src='./public/carrito-de-compras.png' />
+                <img src='./logo192.png' />
             </div>
             <ul className='navbar'>
                 <li><Button variant="contained">Tiendas & Servicios</Button></li>
