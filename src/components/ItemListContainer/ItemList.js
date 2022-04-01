@@ -1,6 +1,7 @@
 import React,{useState, useEffect} from "react"
 import Card from "../Card/Card"
 import Item from "../ItemListContainer/Item"
+import containerProductos from "../../Utils/containerProductos"
 
 const ListProducts = ({children}) => {
     const containerProductos = [{
