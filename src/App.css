@@ -23,15 +23,14 @@ ul.navbar li{
   float: left;
   border: 1px solid gray;
   margin-top: 20px;
+  margin-bottom: 20px;
   margin-left: 20px;
   box-shadow: 1px 1px 5px #0000;
   border-radius: 5px;
+  max-width: 350px;
+  padding: 25px;
 }
-.container-cards-data{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 .stock{
   display: flex;
   align-items: center;
@@ -39,6 +38,11 @@ ul.navbar li{
 .stock div{
   margin-left: 10px;
   margin-right: 10px;
+}
+.container-cards-data{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .container-cards-data p{
   padding: 10px;
@@ -56,4 +60,24 @@ ul.navbar li{
 }
 .carrito img{
   margin-right: 10px;
+}
+ul.navbar a{
+  color: white;
+  text-decoration: none;
+}
+ul.navbar button{
+  background: black;
+}
+ul.navbar button:hover{
+  background: black;
+}
+
+.card{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card-item img{
+  margin: auto;
+  display: flex;
 }

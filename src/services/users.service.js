@@ -1,4 +1,3 @@
-
 const baseUrl= "https://api.mercadolibre.com/sites/MLA/search#json"
 
 export const getUsers = () => {

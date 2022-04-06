@@ -1,11 +1,8 @@
-import { useEffect, useState } from 'react';
-import productoMock from "../../Utils/productoMock"
 import ItemCount from "../ItemCount/ItemCount";
 
 
 const ItemDetail = ({data}) => {
-    const {title, price, tone, stock, image} = data
-
+    const {title,description, price, tone, stock, image} = data
     return(
         <div>
             <div>
@@ -13,7 +10,8 @@ const ItemDetail = ({data}) => {
             </div>
             <div>
                 <h3>{title}</h3>
-                <p>Precio: $ {price}</p>
+                <p>Precio: €{price}</p>
+                <p>{description}</p>
                 <p>Tone</p>
                 <p>{tone}</p>
                 <ItemCount stock = {stock}/>

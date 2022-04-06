@@ -2,19 +2,50 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import './NavBarClass';
 import CartWidget from '../CartWidget/CartWidget';
+import {Link } from "react-router-dom"
+
 
 function NavBar(props){
-    // console.log(props)
+    const page = [
+        {
+            title: "Tienda & Servicios",
+            url: "/tiendaServicios"
+        },
+        {
+            title: "Mi Cuenta",
+            url: "/miCuenta"
+        },
+        {
+            title: "Me Gusta",
+            url: "/meGusta"
+        }
+    ]
+
     return(
         <header className="main-header">
             <div className='container-logo'>
-                <img src='./logo192.png' />
+                <Link to={"/"}><img src='../logo192.png' /></Link>
             </div>
             <ul className='navbar'>
-                <li><Button variant="contained">Tiendas & Servicios</Button></li>
-                <li><Button variant="contained">Mi Cuenta</Button></li>
-                <li><Button variant="contained">Me Gusta</Button></li>
-                <li><Button variant="contained">Carrito</Button></li>
+                <li>
+                    <Button>
+                        <Link to={"/nars"}>Nars</Link>
+                    </Button>
+                </li>
+                <li>
+                    <Button>
+                        <Link to={"/lancome"}>lancome</Link>
+                    </Button>
+                </li>
+               {page.map ( (page) =>{
+                   return(
+                       <li>
+                           <Button>
+                               <Link to={page.url}>{page.title}</Link>
+                           </Button>
+                       </li>
+                   )
+               })}
             </ul>
             <CartWidget />
       </header>
