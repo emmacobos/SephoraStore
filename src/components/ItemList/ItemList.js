@@ -53,9 +53,5 @@ const ListProducts = ({children}) => {
     )
 }
 
-// return{
-    
-// }
-
 
 export default ListProducts;
