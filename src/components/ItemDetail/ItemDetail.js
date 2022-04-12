@@ -2,23 +2,9 @@ import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { useEffect, useState } from 'react';
 import { render } from '@testing-library/react';
-import ItemCount,{onAdd} from "../ItemCount/ItemCount"
+import ItemCount from "../ItemCount/ItemCount"
 
-const ItemDetail = ({data, stock}) => {
-
-    const [count, setCount] = useState(1)
-
-    onAdd = (e) => {
-        if(count < stock){
-            setCount (count + 1)
-        }
-        console.log("anda el onAdd")
-    }
-    function sub(e) {
-        if (count > 1) {
-          setCount(count - 1)
-        }
-    }
+const ItemDetail = ({data}) => {
         return(
             <Container className='container-general'> 
                 <div className='container-detail'>
@@ -31,7 +17,7 @@ const ItemDetail = ({data, stock}) => {
                     <p className='info__subtitle'>TALLE</p>
                     <p className='info__text'>{data.talle}</p>
                     <p className='info__subtitle'>Stock</p>
-                    <ItemCount onAdd = {this.onAdd}/>
+                    <ItemCount stock= {data.stock}/>
                     <p className='info__text detail__text'>{data.description}</p>
                     <Button className='detail__btn-buy'>COMPRAR</Button>
                 </div>

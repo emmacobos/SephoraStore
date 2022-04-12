@@ -1,23 +1,26 @@
 import React,{useState} from "react"
-import ProprTypes from "prop-types"
-import ItemDetail from "../ItemDetail/ItemDetail"
 
 
-const {onAdd} = this.props
-const ItemCount = () => {
+const ItemCount = ({stock}) => {
+    const [count, setCount] = useState(1)
 
+    const onAdd = () => {
+        if(count < stock){
+            setCount (count + 1)
+        }
+    }
+    function sub() {
+        if (count > 1) {
+          setCount(count - 1)
+        }
+    }
     return (
         <div className="stock">
-        {/* <button onClick={sub}>-</button>
-        <div>{count}</div> */}
+        <button onClick={sub}>-</button>
+        <div>{count}</div>
         <button onClick={onAdd}>+</button>
         </div>
     )
 }
-
-onAdd.ProprTypes={
-    onAdd: ProprTypes.func.isRequired
-}
-
 
 export default ItemCount

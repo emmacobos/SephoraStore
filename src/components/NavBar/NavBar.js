@@ -27,7 +27,7 @@ function NavBar(props){
                 <Link to={"/"}><img src='../logo192.png' /></Link>
             </div>
             <ul className='navbar'>
-                <li>
+                {/* <li>
                     <Button>
                         <Link to={"/nars"}>Nars</Link>
                     </Button>
@@ -36,14 +36,17 @@ function NavBar(props){
                     <Button>
                         <Link to={"/lancome"}>lancome</Link>
                     </Button>
-                </li>
-               {page.map ( (page) =>{
+                </li> */}
+               {page.map (page =>{
                    return(
-                       <li>
-                           <Button>
-                               <Link to={page.url}>{page.title}</Link>
-                           </Button>
+                       <li key = {page.id}>
+                           <Button component= {Link} to = {page.title.url} variant="contained">{page.title}</Button>
                        </li>
+                    //    <li>
+                    //        <Button>
+                    //            <Link to={page.url}>{page.title}</Link>
+                    //        </Button>
+                    //    </li>
                    )
                })}
             </ul>
