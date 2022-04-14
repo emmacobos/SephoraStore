@@ -41,7 +41,7 @@ const ListProducts = ({children}) => {
         <div>
             <h2>Productos en Oferta</h2>
             <div className="card">
-                {/* <h1>Contador: {contador}</h1> */}
+                <h1>Contador: {contador}</h1>
                 {productos.map( (producto) => {
                     const {id} = producto
                     return(

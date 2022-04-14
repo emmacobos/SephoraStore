@@ -38,7 +38,7 @@ export default function Item({data, action}){
                     <p>Precio: $ {price}</p>
                     <p>tone: {tone}</p>
                     <ItemCount stock = {stock}/>
-                    <Button >Comprar</Button>
+                    <Button onClick={action}>Comprar</Button>
                 </div>
         </div>
     )
