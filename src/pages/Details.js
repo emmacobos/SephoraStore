@@ -4,6 +4,7 @@ import {useParams} from "react-router-dom";
 import { useEffect, useState } from "react";
 import containerProductos from "../Utils/containerProductos"
 import ItemCount from "../../src/components/ItemCount/ItemCount"
+import ItemDetailContainer from "../components/ItemDetail/ItemDetailContainer";
 
 const Details = () => {
     const {id, categoria} = useParams()
@@ -22,20 +23,19 @@ const Details = () => {
     }
 
     return (
-        <Container>
+        <Container className="contenedor-detalle-producto">
             <h1>Detalle</h1>
             <div>
                 <img src={producto.image} alt="Base" />
             </div>
-            <div>
+            <div className="detalle-producto">
                 <h3>{producto.title}</h3>
                 <p>Precio: € {producto.price}</p>
                 <p>{producto.description}</p>
                 <p>Tone: </p>
                 <p><strong>{producto.tone}</strong></p>
-                <ItemCount stock = {producto.stock}/>
-                <Button >Añadir al carrito</Button>
             </div>
+            <ItemDetailContainer/>
         </Container>
 
     )

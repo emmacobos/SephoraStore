@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom"
 
 const ListProducts = ({children}) => {
     const {categoria} = useParams()
-    const [contador, setContador] = useState(0)
     const [productos, setProducts] = useState([])
 
     const obtenerProductos = () =>{
@@ -31,21 +30,15 @@ const ListProducts = ({children}) => {
             }
         })
     }
-    const contadorInfo = (e, nombre) =>{
-        e.stopPropagation()
-        console.log("Nombre: " , nombre)
-        setContador(contador +1)
-    }
 
     return(
         <div>
             <h2>Productos en Oferta</h2>
             <div className="card">
-                <h1>Contador: {contador}</h1>
                 {productos.map( (producto) => {
                     const {id} = producto
                     return(
-                        <Item data= {producto} key = {id} action={contadorInfo}/>
+                        <Item data= {producto} key = {id}/>
                     )
                 })}
             </div>

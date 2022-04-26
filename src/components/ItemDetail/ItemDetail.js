@@ -1,33 +1,29 @@
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import { useEffect, useState } from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom'
+
+
+function seguirCompra () {
+    return (
+      <div className='seguirCompra'>
+        <Link to='/cart'><button className='botonSeguirComprando'>Ir al carrito</button></Link>
+        <Link to='/'><button className='botonSeguirComprando'>Seguir comprando</button></Link>
+      </div>
+    )
+}
 
 const ItemDetail = ({data}) => {
-    
+    const [contador, setContador] = useState(false)
+    const borrarTitulo = (text) => {
+        setContador(text)
+    }
     return(
         <Container className='container-general'> 
-            <div className='container-detail'>
-            <div className='container-detail__img'>
-                <img src={data.image} alt="jean" />
-            </div>
-            <div className='container-detail__info'>
-                <h3 className='info__title'>{data.title}</h3>
-                <p className='info__text'>$ {data.price}</p>
-                <p className='info__subtitle'>TALLE</p>
-                <p className='info__text'>{data.talle}</p>
-                <p className='info__subtitle'>COLOR</p>
-                <ul className='info__color'>
-                    {/* {data.colors.map( (color) => {
-                        return(
-                            <li style={{background: `${color.hex}`}}></li>
-                        )
-                    })}                     */}
-                </ul>
-                <p className='info__subtitle'>DETALLE</p>
-                <p className='info__text detail__text'>{data.description}</p>
-                <Button className='detail__btn-buy'>COMPRAR</Button>
-            </div>
-            </div>
+                <div>
+                    {contador ? seguirCompra() : <ItemCount agregado={(text) => borrarTitulo(text)} stock={10} initial={0} />}
+                </div>
         </Container>
     )
 }

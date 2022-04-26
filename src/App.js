@@ -10,6 +10,7 @@ import Home from "./pages/Home"
 import MiCuenta from "./pages/MiCuenta"
 import errorDePagina from "./pages/ErrorDePagina"
 import Details from './pages/Details';
+import Cart from './components/Cart/Cart'
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='*' element={<errordePagina/> } />
           <Route path='/:categoria/:id' element={<Details/> } />
           <Route path='/:categoria/' element={<Home/> } />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>

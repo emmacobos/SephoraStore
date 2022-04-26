@@ -1,8 +1,10 @@
 
 import React,{useState} from "react"
+import Button from '@mui/material/Button';
 
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, agregado}) => {
+
     const [count, setCount] = useState(1)
 
     const onAdd = () => {
@@ -17,10 +19,14 @@ const ItemCount = ({stock}) => {
     }
     return (
         <div className="stock">
-        <button onClick={sub}>-</button>
-        <div>{count}</div>
-        <button onClick={onAdd}>+</button>
+            <div className="stock-container">
+                <button onClick={sub}>-</button>
+                <div className="contador">{count}</div>
+                <button onClick={onAdd}>+</button>
+            </div>
+            <Button onClick={() => agregado(true)}>Añadir al carrito</Button>
         </div>
+        
     )
 }
 
