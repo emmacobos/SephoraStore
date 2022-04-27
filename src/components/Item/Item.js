@@ -1,4 +1,5 @@
-import { useContext, useEffect, useState } from "react";
+import React,{ useState, useEffect, useContext } from 'react'
+import CartContext from '../Context/CartContext';
 
 
 import ItemCount from "../ItemCount/ItemCount";
@@ -9,10 +10,11 @@ import Button from '@mui/material/Button';
 
 export default function Item({data, action}){  
     const navigate = useNavigate();
-
+    const { cartProducts, addProductToCart } = useContext(CartContext)
     const {title,description, price, tone, stock, image, id} = data
 
     useEffect( () =>{
+        console.log("cartProducts:", cartProducts)
         const ventanaScroll = () =>{
             if( window.scrollY > 100 ) {
                 console.log("scroll mayor a 100")
@@ -28,7 +30,11 @@ export default function Item({data, action}){
     const detailProducto = () =>{
         navigate(`/productos/${id}`)
     }
-
+    const addToCart = (e) => {
+        e.stopPropagation()  
+        console.log("Productos agregados:", cartProducts) 
+        addProductToCart(data)
+    }
     return(
         <div className="card-item" onClick={detailProducto}>
                 <img src={`./${image}`} alt={`./${image}`}  />
@@ -37,7 +43,7 @@ export default function Item({data, action}){
                     <p>{description}</p>
                     <p>Precio: $ {price}</p>
                     <p>tone: {tone}</p>
-                    <Button onClick={action}>Comprar</Button>
+                    <Button onClick={addToCart} className="btn-custom">Comprar</Button>
                 </div>
         </div>
     )

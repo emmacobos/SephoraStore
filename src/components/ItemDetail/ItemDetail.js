@@ -15,7 +15,7 @@ function seguirCompra () {
 }
 
 const ItemDetail = (data) => {
-    const {title,description, price, tone, stock, image, id} = data.data
+    const {description} = data.data
 
     const [contador, setContador] = useState(false)
     const borrarTitulo = (text) => {
@@ -25,14 +25,10 @@ const ItemDetail = (data) => {
         <Container className='container-general'> 
                 <div>
                     <div className='container-detail'>
-                     <div className='container-detail__img'>
-                         <img src={image} alt="labial" />
-                     </div>
-                     <div className='container-detail__info'>
-                        <h3 className='info__title'>{title}</h3>
-                        <p className='info__text'>$ {price}</p>
-                        <p className='info__text detail__text'>{description}</p>
-                        {contador ? seguirCompra() : <ItemCount agregado={(text) => borrarTitulo(text)} stock={10} initial={0} />}
+
+                        <div className='container-detail__info'>
+                            <p className='info__text detail__text'>{description}</p>
+                            {contador ? seguirCompra() : <ItemCount agregado={(text) => borrarTitulo(text)} stock={10} initial={0} />}
                         </div>
                     </div>
               </div>

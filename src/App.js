@@ -1,7 +1,6 @@
 import './App.css';
 import NavBar from './components/NavBar/NavBar'
 
-
 import React from "react"
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
@@ -11,23 +10,25 @@ import MiCuenta from "./pages/MiCuenta"
 import errorDePagina from "./pages/ErrorDePagina"
 import Details from './pages/Details';
 import Cart from './components/Cart/Cart'
-
+import {CartProvider} from "./components/Context/CartContext"
 
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/MiCuenta' element={<MiCuenta/> } />
-          <Route path='*' element={<errordePagina/> } />
-          <Route path='/:categoria/:id' element={<Details/> } />
-          <Route path='/:categoria/' element={<Home/> } />
-          <Route path="/cart" element={<Cart />} />
-        </Routes>
-      </BrowserRouter>
+       <CartProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/MiCuenta' element={<MiCuenta/> } />
+              <Route path='*' element={<errordePagina/> } />
+              <Route path='/:categoria/:id' element={<Details/> } />
+              <Route path='/:categoria/' element={<Home/> } />
+              <Route path="/cart" element={<Cart />} />
+            </Routes>
+          </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
