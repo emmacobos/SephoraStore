@@ -10,7 +10,10 @@ import MiCuenta from "./pages/MiCuenta"
 import errorDePagina from "./pages/ErrorDePagina"
 import Details from './pages/Details';
 import Cart from './components/Cart/Cart'
+
+//Context
 import {CartProvider} from "./components/Context/CartContext"
+
 
 function App() {
 

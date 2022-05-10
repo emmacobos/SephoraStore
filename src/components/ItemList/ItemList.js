@@ -2,7 +2,7 @@ import React,{useState, useEffect, useContext} from 'react'
 import Item from "../Item/Item"
 import containerProductos from "../../Utils/containerProductos"
 import { useParams } from "react-router-dom"
-import CartContext from '../Context/CartContext'
+
 
 const ListProducts = ({children}) => {
     const {categoria} = useParams()

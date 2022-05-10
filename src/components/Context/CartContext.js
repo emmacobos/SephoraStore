@@ -16,9 +16,7 @@ const CartProvider = ({children}) => {
     }
 
     const deleteProduct = (producto) => {
-        setCartProducts(cartProducts.filter( (cartProduct) => {
-            return cartProduct.id !== producto.id
-        }))
+        setCartProducts(cartProducts.filter( cartProduct => cartProduct.id !== producto.id))
     }
 
     const totalPrecio = () =>{

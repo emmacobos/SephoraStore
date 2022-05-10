@@ -1,31 +1,16 @@
-import React,{ useState, useEffect, useContext } from 'react'
+import React,{useContext } from 'react'
 import CartContext from '../Context/CartContext';
 
 
-import ItemCount from "../ItemCount/ItemCount";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Button from '@mui/material/Button';
 
 
 
-export default function Item({data, action}){  
+export default function Item({data}){  
     const navigate = useNavigate();
     const { cartProducts, addProductToCart } = useContext(CartContext)
-    const {title,description, price, tone, stock, image, id} = data
-
-    useEffect( () =>{
-        console.log("cartProducts:", cartProducts)
-        const ventanaScroll = () =>{
-            if( window.scrollY > 100 ) {
-                console.log("scroll mayor a 100")
-            }
-        }       
-        window.addEventListener("scroll", ventanaScroll)
-
-        return () =>{
-            window.removeEventListener("scroll", ventanaScroll)
-        }
-    }, [])
+    const {title,description, price, tone, image, id} = data
 
     const detailProducto = () =>{
         navigate(`/productos/${id}`)

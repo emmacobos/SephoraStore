@@ -71,6 +71,7 @@ const CartWidget = () => {
                 <Divider />
                 {cartProducts.map( (cartProduct) => {
                     return(
+                        <Link to="/cart">
                         <MenuItem className='item-cart-modal' key={cartProduct.id}>
                             <div className='item-cart-modal__img'>
                                 <img src={`./${cartProduct.image}`} /> 
@@ -83,6 +84,7 @@ const CartWidget = () => {
                                 <DeleteIcon />
                             </div>
                         </MenuItem>
+                        </Link>
                     )
                 })}
 

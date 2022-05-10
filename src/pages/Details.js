@@ -1,9 +1,10 @@
 import Container from "@mui/material/Container";
 import Button from '@mui/material/Button';
-import {useParams} from "react-router-dom";
+
+import {useParams, useNavigate} from "react-router-dom";
 import { useEffect, useState } from "react";
+
 import containerProductos from "../Utils/containerProductos"
-import ItemCount from "../../src/components/ItemCount/ItemCount"
 import ItemDetailContainer from "../components/ItemDetail/ItemDetailContainer";
 
 const Details = () => {

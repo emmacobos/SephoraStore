@@ -8,17 +8,9 @@ import {Link } from "react-router-dom"
 function NavBar(props){
     const page = [
         {
-            title: "Tienda & Servicios",
-            url: "/tiendaServicios"
-        },
-        {
             title: "Mi Cuenta",
             url: "/miCuenta"
         },
-        {
-            title: "Me Gusta",
-            url: "/meGusta"
-        }
     ]
 
     return(
